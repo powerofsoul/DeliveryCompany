@@ -21,18 +21,18 @@
                 <Font name="Courier New" size="45.0"/>
             </font>
         </Text>
-        <JFXPasswordField alignment="CENTER" layoutX="45.0" layoutY="174.0" prefHeight="30.0" prefWidth="250.0"
-                          promptText="Password">
-            <font>
-                <Font name="Courier New" size="31.0"/>
-            </font>
-        </JFXPasswordField>
-        <JFXTextField alignment="CENTER" layoutX="45.0" layoutY="102.0" prefHeight="25.0" prefWidth="250.0"
+        <JFXTextField fx:id="userNameField" alignment="CENTER" layoutX="45.0" layoutY="102.0" prefHeight="25.0" prefWidth="250.0"
                       promptText="Username">
             <font>
                 <Font name="Courier New" size="31.0"/>
             </font>
         </JFXTextField>
+        <JFXPasswordField fx:id="passwordField" alignment="CENTER" layoutX="45.0" layoutY="174.0" prefHeight="30.0" prefWidth="250.0"
+                          promptText="Password">
+            <font>
+                <Font name="Courier New" size="31.0"/>
+            </font>
+        </JFXPasswordField>
         <ImageView fitHeight="103.0" fitWidth="115.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true"
                    preserveRatio="true">
             <image>
