@@ -12,7 +12,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0"
             prefWidth="339.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8"
-            fx:controller="DeliveryCompany.LogInController"
             xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Text fontSmoothingType="LCD" layoutX="129.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -36,7 +35,7 @@
         <ImageView fitHeight="103.0" fitWidth="115.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true"
                    preserveRatio="true">
             <image>
-                <Image url="@../../resources/Logo.png"/>
+                <Image url="@../../../resources/Logo.png"/>
             </image>
         </ImageView>
         <JFXButton fx:id="logInButton" onAction="#logIn" buttonType="RAISED" layoutX="115.0" layoutY="270.0" text="Submit" textOverrun="LEADING_ELLIPSIS">
