@@ -13,7 +13,7 @@ import java.net.URL;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URI url = new File("src/main/java/DeliveryCompany/LogIn.fxml").toURI();
+        URI url = new File("src/main/java/DeliveryCompany/LogInWindow.fxml").toURI();
         Parent root = FXMLLoader.load(url.toURL());
         primaryStage.setScene(new Scene(root));
         primaryStage.setTitle("Log in");

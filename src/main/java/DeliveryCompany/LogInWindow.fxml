@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections ?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0"
+            prefWidth="339.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8"
+            fx:controller="DeliveryCompany.LogInController"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text fontSmoothingType="LCD" layoutX="129.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Log In" textAlignment="CENTER">
+            <font>
+                <Font name="Courier New" size="45.0"/>
+            </font>
+        </Text>
+        <JFXPasswordField alignment="CENTER" layoutX="45.0" layoutY="174.0" prefHeight="30.0" prefWidth="250.0"
+                          promptText="Password">
+            <font>
+                <Font name="Courier New" size="31.0"/>
+            </font>
+        </JFXPasswordField>
+        <JFXTextField alignment="CENTER" layoutX="45.0" layoutY="102.0" prefHeight="25.0" prefWidth="250.0"
+                      promptText="Username">
+            <font>
+                <Font name="Courier New" size="31.0"/>
+            </font>
+        </JFXTextField>
+        <ImageView fitHeight="103.0" fitWidth="115.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../../resources/Logo.png"/>
+            </image>
+        </ImageView>
+        <JFXButton fx:id="logInButton" onAction="#logIn" buttonType="RAISED" layoutX="115.0" layoutY="270.0" text="Submit" textOverrun="LEADING_ELLIPSIS">
+            <font>
+                <Font name="Courier New" size="22.0"/>
+            </font>
+        </JFXButton>
+        <Label fx:id="errorMessageLabel" layoutX="73.0" layoutY="250.0" text="Invalid credentials" textFill="RED" visible="false">
+            <font>
+                <Font name="Courier New" size="17.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
