@@ -1,7 +1,7 @@
 package deliveryCompany;
 
 import databaseHandler.DatabaseConnection;
-import deliveryCompany.logInWindow.LogInController;
+import deliveryCompany.logInWindow.LogInWindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URI;
 import java.sql.SQLException;
-import java.util.function.Function;
 
 public class Main extends Application {
     @Override
@@ -20,7 +19,7 @@ public class Main extends Application {
 
         URI url = new File("src/main/java/deliveryCompany/logInWindow/LogInWindow.fxml").toURI();
         FXMLLoader fxmlLoader = new FXMLLoader(url.toURL());
-        LogInController controller = new LogInController(credentials -> {
+        LogInWindowController controller = new LogInWindowController(credentials -> {
             try{
                 return connection.validCredentials(credentials);
             }

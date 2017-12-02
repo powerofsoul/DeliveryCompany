@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import java.util.function.Function;
 
 
-public class LogInController {
+public class LogInWindowController {
     @FXML
     private Label errorMessageLabel;
     @FXML
@@ -18,7 +18,7 @@ public class LogInController {
 
     private Function<Credentials, Boolean> validCredentials;
 
-    public LogInController(Function<Credentials, Boolean> validCredentials) {
+    public LogInWindowController(Function<Credentials, Boolean> validCredentials) {
         this.validCredentials =  validCredentials;
     }
 
