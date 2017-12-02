@@ -1,7 +1,6 @@
 package deliveryCompany;
 
-import DatabaseHandler.Credentials;
-import DatabaseHandler.DatabaseConnection;
+import databaseHandler.DatabaseConnection;
 import deliveryCompany.logInWindow.LogInController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +34,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(fxmlLoader.load()));
         primaryStage.setTitle("Log in");
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     public static void main(String[] args){

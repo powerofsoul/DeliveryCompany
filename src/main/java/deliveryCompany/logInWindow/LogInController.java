@@ -1,6 +1,6 @@
 package deliveryCompany.logInWindow;
 
-import DatabaseHandler.Credentials;
+import databaseHandler.Credentials;
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

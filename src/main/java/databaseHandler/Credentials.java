@@ -1,4 +1,4 @@
-package DatabaseHandler;
+package databaseHandler;
 
 public class Credentials {
     public String userName;
