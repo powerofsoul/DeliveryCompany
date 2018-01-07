@@ -21,11 +21,12 @@
                     </font>
                 </Label>
                 <Circle fill="WHITE" layoutX="73.0" layoutY="50.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
-                <Pane layoutX="1.0" layoutY="120.0" prefHeight="388.0" prefWidth="145.0" fx:id="menuPane" />
+                <VBox fx:id="menuBox" layoutX="5.0" layoutY="129.0" prefHeight="373.0" prefWidth="135.0" spacing="15.0"/>
             </children>
             <effect>
                 <InnerShadow blurType="TWO_PASS_BOX" choke="0.69" height="15.07" radius="20.377499999999998" width="68.44" />
             </effect>
         </AnchorPane>
+        <AnchorPane fx:id="mainView" layoutX="347.0" layoutY="1.0" prefHeight="507.0" prefWidth="712.0" style="-fx-background-color: #e0e0c9;" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="1.0" />
     </children>
 </AnchorPane>
