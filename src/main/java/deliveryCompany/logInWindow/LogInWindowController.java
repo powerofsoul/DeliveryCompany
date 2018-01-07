@@ -2,6 +2,7 @@ package deliveryCompany.logInWindow;
 
 import databaseHandler.Credentials;
 import com.jfoenix.controls.*;
+import deliveryCompany.mainWindow.MainWindowController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,13 +45,18 @@ public class LogInWindowController {
         boolean credentialsAreCorrect = validCredentials.apply(new Credentials(userNameField.getText(), passwordField.getText()));
 
         if(credentialsAreCorrect) {
-            URL mainWindowUrl = new File("src/main/java/deliveryCompany/mainWindow/MainWindow.fxml").toURL();
-            FXMLLoader mainWindow =  createFmxWindow(mainWindowUrl, null);
-            closeWindowFromInputEvent(ae);
-            showNewWindow(mainWindow, "Delivery Company", true);
+            ShowMainwindow(ae);
         }
         else
             showError();
+    }
+
+    private void ShowMainwindow(ActionEvent ae) throws IOException {
+        URL mainWindowUrl = new File("src/main/java/deliveryCompany/mainWindow/MainWindow.fxml").toURL();
+        MainWindowController mainWindowController = new MainWindowController(userNameField.getText());
+        FXMLLoader mainWindow =  createFmxWindow(mainWindowUrl, mainWindowController);
+        closeWindowFromInputEvent(ae);
+        showNewWindow(mainWindow, "Delivery Company", true);
     }
 
     private void addListenerWhenCredentialsAreChanged() {
