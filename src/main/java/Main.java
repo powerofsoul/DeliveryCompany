@@ -10,6 +10,7 @@ import java.net.URI;
 import java.sql.SQLException;
 
 import static deliveryCompany.Utils.WindowUtils.createFmxWindow;
+import static deliveryCompany.Utils.WindowUtils.showNewWindow;
 
 public class Main extends Application {
     @Override
@@ -29,11 +30,7 @@ public class Main extends Application {
         });
 
         FXMLLoader loginWindowFXM = createFmxWindow(fmxLoginWindowUrl.toURL(), controller);
-
-        primaryStage.setScene(new Scene(loginWindowFXM.load()));
-        primaryStage.setTitle("Log in");
-        primaryStage.show();
-        primaryStage.setResizable(false);
+        showNewWindow(loginWindowFXM, "Log in", false);
     }
 
     public static void main(String[] args) {
