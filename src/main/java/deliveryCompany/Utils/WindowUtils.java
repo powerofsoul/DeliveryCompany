@@ -1,9 +1,12 @@
 package deliveryCompany.Utils;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.event.InputEvent;
 import java.io.IOException;
 import java.net.URL;
 
@@ -23,5 +26,11 @@ public class WindowUtils {
 
         stage.show();
         return stage;
+    }
+
+    public static void closeWindowFromInputEvent(ActionEvent e){
+        final Node source = (Node) e.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

@@ -2,10 +2,22 @@ package deliveryCompany.logInWindow;
 
 import databaseHandler.Credentials;
 import com.jfoenix.controls.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import java.awt.event.InputEvent;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.util.function.Function;
+
+import static deliveryCompany.Utils.WindowUtils.closeWindowFromInputEvent;
+import static deliveryCompany.Utils.WindowUtils.createFmxWindow;
+import static deliveryCompany.Utils.WindowUtils.showNewWindow;
 
 
 public class LogInWindowController {
@@ -28,11 +40,15 @@ public class LogInWindowController {
     }
 
     @FXML
-    private void logIn(){
+    private void logIn(ActionEvent ae) throws IOException{
         boolean credentialsAreCorrect = validCredentials.apply(new Credentials(userNameField.getText(), passwordField.getText()));
 
-        if(credentialsAreCorrect)
-            System.out.println("correct credentials");
+        if(credentialsAreCorrect) {
+            URL mainWindowUrl = new File("src/main/java/deliveryCompany/mainWindow/MainWindow.fxml").toURL();
+            FXMLLoader mainWindow =  createFmxWindow(mainWindowUrl, null);
+            closeWindowFromInputEvent(ae);
+            showNewWindow(mainWindow, "Delivery Company", true);
+        }
         else
             showError();
     }

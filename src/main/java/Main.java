@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URI;
+import java.net.URL;
 import java.sql.SQLException;
 
 import static deliveryCompany.Utils.WindowUtils.createFmxWindow;
@@ -18,7 +19,7 @@ public class Main extends Application {
         DatabaseConnection connection = new DatabaseConnection();
         connection.connect();
 
-        URI fmxLoginWindowUrl = new File("src/main/java/deliveryCompany/logInWindow/LogInWindow.fxml").toURI();
+        URL fmxLoginWindowUrl = new File("src/main/java/deliveryCompany/logInWindow/LogInWindow.fxml").toURL();
 
         LogInWindowController controller = new LogInWindowController(credentials -> {
             try {
@@ -29,7 +30,7 @@ public class Main extends Application {
             return false;
         });
 
-        FXMLLoader loginWindowFXM = createFmxWindow(fmxLoginWindowUrl.toURL(), controller);
+        FXMLLoader loginWindowFXM = createFmxWindow(fmxLoginWindowUrl, controller);
         showNewWindow(loginWindowFXM, "Log in", false);
     }
 
