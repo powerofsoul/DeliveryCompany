@@ -16,14 +16,13 @@ import static deliveryCompany.Utils.WindowUtils.showNewWindow;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        DatabaseConnection connection = new DatabaseConnection();
-        connection.connect();
+        DatabaseConnection.connect();
 
         URL fmxLoginWindowUrl = new File("src/main/java/deliveryCompany/logInWindow/LogInWindow.fxml").toURL();
 
         LogInWindowController controller = new LogInWindowController(credentials -> {
             try {
-                return connection.validCredentials(credentials);
+                return DatabaseConnection.validCredentials(credentials);
             } catch (SQLException e) {
                 System.out.println("Error " + e.getMessage());
             }

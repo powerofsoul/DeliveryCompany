@@ -2,6 +2,7 @@ package deliveryCompany.logInWindow;
 
 import databaseHandler.Credentials;
 import com.jfoenix.controls.*;
+import databaseHandler.User;
 import deliveryCompany.mainWindow.MainWindowController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,7 +54,9 @@ public class LogInWindowController {
 
     private void ShowMainwindow(ActionEvent ae) throws IOException {
         URL mainWindowUrl = new File("src/main/java/deliveryCompany/mainWindow/MainWindow.fxml").toURL();
-        MainWindowController mainWindowController = new MainWindowController(userNameField.getText());
+        MainWindowController mainWindowController = new MainWindowController(
+                User.getUser(userNameField.getText())
+        );
         FXMLLoader mainWindow =  createFmxWindow(mainWindowUrl, mainWindowController);
         closeWindowFromInputEvent(ae);
         showNewWindow(mainWindow, "Delivery Company", true);
