@@ -43,25 +43,21 @@ public class MainWindowController {
     }
 
     private void addMenuItems() {
-        switch (getPermissionLevel()) {
+        switch (user.accessLevel) {
             case 5:
-                addAdminMenuItems();
+                addManageDeliveryWindow();
         }
     }
 
-    private void addAdminMenuItems() {
+    private void addManageDeliveryWindow() {
         try {
             URL menuItemUrl = new File("src/main/java/deliveryCompany/manageDelivery/ManageDeliveryWindow.fxml").toURL();
             FXMLLoader menuItem = createFmxWindow(menuItemUrl, null);
-            MenuItem m = new MenuItem("TEST", menuItem.load(), mainView);
+            MenuItem m = new MenuItem("Manage Delivery", menuItem.load(), mainView);
             menuBox.getChildren().add(m.getMenuButton());
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-
-    private int getPermissionLevel() {
-        return 5;
     }
 
     public MainWindowController(User user) {

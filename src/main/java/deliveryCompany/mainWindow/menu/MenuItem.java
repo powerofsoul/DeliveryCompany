@@ -1,9 +1,11 @@
 package deliveryCompany.mainWindow.menu;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
@@ -16,6 +18,14 @@ public class MenuItem {
     private AnchorPane viewLocation;
     private AnchorPane menuContent;
     private String name;
+
+    @FXML
+    public JFXButton menuButton;
+
+    @FXML
+    private void initialize() throws IOException {
+        menuButton.setText(name);
+    }
 
     @FXML
     private void showView() throws IOException{

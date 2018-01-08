@@ -10,23 +10,22 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <AnchorPane layoutY="1.0" prefHeight="507.0" prefWidth="145.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #1446A0;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
+        <AnchorPane layoutY="1.0" prefHeight="507.0" prefWidth="202.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #1446A0;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
             <children>
-                <Label fx:id="userNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="90.0" prefHeight="20.0" prefWidth="135.0" textFill="#fffafa">
+                <Label fx:id="userNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="90.0" prefHeight="30.0" prefWidth="193.0" textFill="#fffafa">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <Circle fx:id="imageCircle" fill="WHITE" layoutX="73.0" layoutY="50.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
-                <VBox fx:id="menuBox" layoutX="5.0" layoutY="129.0" prefHeight="373.0" prefWidth="135.0" spacing="15.0"/>
+                <Circle fx:id="imageCircle" fill="WHITE" layoutX="102.0" layoutY="50.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+                <VBox fx:id="menuBox" layoutX="5.0" layoutY="129.0" prefHeight="373.0" prefWidth="193.0" spacing="15.0" />
             </children>
             <effect>
                 <InnerShadow blurType="TWO_PASS_BOX" choke="0.69" height="15.07" radius="20.377499999999998" width="68.44" />
             </effect>
         </AnchorPane>
-        <AnchorPane fx:id="mainView" layoutX="347.0" layoutY="1.0" prefHeight="507.0" prefWidth="712.0" style="-fx-background-color: #e0e0c9;" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="1.0" />
+        <AnchorPane fx:id="mainView" layoutX="202.0" prefHeight="507.0" prefWidth="894.0" style="-fx-background-color: #e0e0c9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
     </children>
 </AnchorPane>
