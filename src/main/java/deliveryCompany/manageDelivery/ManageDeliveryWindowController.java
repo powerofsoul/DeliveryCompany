@@ -17,24 +17,25 @@ public class ManageDeliveryWindowController {
 
     @FXML
     private void initialize() throws SQLException {
-        List<Delivery> deliveryList = Delivery.getAllDeliveries();
-        FXCollections.observableArrayList(deliveryList);
-
+        Delivery.deliveryTableView = deliveryTableView;
+        Delivery.getAllDeliveries();
         deliveryTableView.getColumns().addAll(
                 generateColumn("Id","id"),
                 generateColumn("Sender","senderName"),
                 generateColumn("Receiver","receiverName"),
                 generateColumn("Postman","postmanName"),
                 generateColumn("Delivery Date","deliveryDate"),
-                generateColumn("Dispatched Date","dispatchedDate")
+                generateColumn("Dispatched Date","dispatchedDate"),
+                generateColumn("Delete Delivery","deleteButton")
         );
 
-        deliveryTableView.getItems().addAll(deliveryList);
+        deliveryTableView.getItems().addAll(Delivery.deliveryList);
     }
 
     private TableColumn generateColumn(String identifier, String variableName){
         TableColumn column = new TableColumn(identifier);
         column.setCellValueFactory(new PropertyValueFactory<>(variableName));
+
         return column;
     }
 }
