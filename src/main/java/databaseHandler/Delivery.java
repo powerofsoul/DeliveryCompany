@@ -110,6 +110,7 @@ public class Delivery {
         while (queryResult.next()) {
             deliveries.add(deliveryQueryResultToDelivery(queryResult));
         }
+        deliveryList.clear();
         deliveryList.addAll(deliveries);
     }
 

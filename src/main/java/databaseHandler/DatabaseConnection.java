@@ -39,6 +39,6 @@ public class DatabaseConnection {
 
     public static void executeUpdateQuery(String query) throws SQLException {
         Statement statement = connection.createStatement();
-        statement.executeUpdate(query);
+        statement.execute(query);
     }
 }

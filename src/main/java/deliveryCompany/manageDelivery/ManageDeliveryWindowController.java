@@ -28,7 +28,7 @@ public class ManageDeliveryWindowController {
                 generateColumn("Dispatched Date","dispatchedDate"),
                 generateColumn("Delete Delivery","deleteButton")
         );
-
+        deliveryTableView.getItems().clear();
         deliveryTableView.getItems().addAll(Delivery.deliveryList);
     }
 
