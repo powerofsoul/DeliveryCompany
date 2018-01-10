@@ -11,30 +11,39 @@ import static databaseHandler.DatabaseConnection.getSingleRowQueryResult;
 
 public class Delivery {
     private int id;
+    public int getId(){
+        return id;
+    }
 
     private int senderId;
-
-    private Sender sender() throws SQLException{
-        return Sender.getSender(id);
+    public String getSenderName() throws SQLException{
+        return Sender.getSender(id).toString();
     }
 
     private int receiverId;
-    private Receiver receiver() throws SQLException{
-        return Receiver.getReceiver(id);
+    public String getReceiverName() throws SQLException{
+        return Receiver.getReceiver(id).toString();
     }
 
     private int packageId;
-    private Package aPackage() throws SQLException{
+    public Package getPackage() throws SQLException{
         return Package.getPackage(id);
     }
 
     private int postmanId;
-    private Postman postman() throws SQLException{
-        return Postman.getPostman(id);
+    public String getPostmanName() throws SQLException{
+        return Postman.getPostman(id).toString();
     }
 
     private Date deliveryDate;
+    public Date getDeliveryDate(){
+        return deliveryDate;
+    }
+
     private Date dispatchedDate;
+    public Date getDispatchedDate(){
+        return dispatchedDate;
+    }
 
     public Delivery(int id, int senderId, int receiverId, int packageId, int postmanId, Date deliveryDate, Date dispatchedDate) {
         this.id = id;

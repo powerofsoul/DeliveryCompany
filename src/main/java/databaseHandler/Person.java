@@ -35,4 +35,9 @@ public class Person {
                 rs.getString("Prenume"),
                 rs.getString("Adresa"));
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }

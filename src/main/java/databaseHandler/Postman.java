@@ -23,4 +23,9 @@ public class Postman {
                 rs.getString("Nume"),
                 rs.getString("Prenume"));
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }
