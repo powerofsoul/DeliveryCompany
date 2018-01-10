@@ -30,25 +30,25 @@ public class Delivery {
     private int senderId;
 
     public String getSenderName() throws SQLException {
-        return Sender.getSender(id).toString();
+        return Sender.getSender(senderId).toString();
     }
 
     private int receiverId;
 
     public String getReceiverName() throws SQLException {
-        return Receiver.getReceiver(id).toString();
+        return Receiver.getReceiver(receiverId).toString();
     }
 
     private int packageId;
 
     public Package getPackage() throws SQLException {
-        return Package.getPackage(id);
+        return Package.getPackage(packageId);
     }
 
     private int postmanId;
 
     public String getPostmanName() throws SQLException {
-        return Postman.getPostman(id).toString();
+        return Postman.getPostman(postmanId).toString();
     }
 
     private Date deliveryDate;
