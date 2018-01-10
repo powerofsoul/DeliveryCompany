@@ -1,11 +1,9 @@
 package databaseHandler;
 
-import javafx.geometry.Pos;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static databaseHandler.DatabaseConnection.getQueryResult;
+import static databaseHandler.DatabaseConnection.getSingleRowQueryResult;
 
 public class Postman {
     public int id;
@@ -19,7 +17,7 @@ public class Postman {
     }
 
     public static Postman getPostman(int id) throws SQLException {
-        ResultSet rs = getQueryResult(String.format("Select * from curier where id=%d", id));
+        ResultSet rs = getSingleRowQueryResult(String.format("Select * from curier where id=%d", id));
 
         return new Postman(id,
                 rs.getString("Nume"),

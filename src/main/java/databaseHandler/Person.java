@@ -3,7 +3,7 @@ package databaseHandler;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static databaseHandler.DatabaseConnection.getQueryResult;
+import static databaseHandler.DatabaseConnection.getSingleRowQueryResult;
 
 public class Person {
     public enum PersonType {
@@ -28,7 +28,7 @@ public class Person {
     public static Sender getPerson(int id, PersonType personType) throws SQLException {
         String table = personType == PersonType.Sender ? "expeditor" : "destinatar";
 
-        ResultSet rs = getQueryResult(String.format("Select * from %s where id=%d", table, id));
+        ResultSet rs = getSingleRowQueryResult(String.format("Select * from %s where id=%d", table, id));
 
         return new Sender(id,
                 rs.getString("Nume"),

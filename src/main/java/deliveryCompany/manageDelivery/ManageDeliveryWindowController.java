@@ -9,5 +9,6 @@ public class ManageDeliveryWindowController {
     private TableView deliveryTableView;
 
     private void initialize() throws IOException {
+
     }
 }

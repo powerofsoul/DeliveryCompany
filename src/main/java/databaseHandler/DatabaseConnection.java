@@ -8,7 +8,7 @@ public class DatabaseConnection {
     private static String UserName = "root";
     private static String Password = "";
 
-    public static void connect() throws Exception{
+    public static void connect() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
         String connectionUrl = String.format("jdbc:mysql://localhost:3306/%s?useUnicode=true&characterEncoding=UTF-8&user=%s&password=%s",
                 DB, UserName, Password);
@@ -16,7 +16,7 @@ public class DatabaseConnection {
     }
 
     public static boolean validCredentials(String username, String password) throws SQLException {
-        ResultSet result =  getQueryResult(String.format("select COUNT(*) as Total from users where username='%s' and password='%s'", username, password));
+        ResultSet result = getSingleRowQueryResult(String.format("select COUNT(*) as Total from users where username='%s' and password='%s'", username, password));
         return result.getInt("Total") == 1;
     }
 
@@ -24,11 +24,16 @@ public class DatabaseConnection {
         return validCredentials(credentials.userName, credentials.password);
     }
 
-    public static ResultSet getQueryResult(String query) throws SQLException{
+    public static ResultSet getSingleRowQueryResult(String query) throws SQLException {
+        ResultSet result = getQueryResult(query);
+        result.next();
+        return result;
+    }
+
+    public static ResultSet getQueryResult(String query) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(query);
-        //Get first line?
-        result.next();
+
         return result;
     }
 }

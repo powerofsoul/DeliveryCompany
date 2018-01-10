@@ -1,13 +1,13 @@
 package databaseHandler;
 
-import javafx.geometry.Pos;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static databaseHandler.DatabaseConnection.getQueryResult;
-import static databaseHandler.Sender.*;
+import static databaseHandler.DatabaseConnection.getSingleRowQueryResult;
 
 public class Delivery {
     private int id;
@@ -47,15 +47,30 @@ public class Delivery {
     }
 
     public static Delivery getDelivery(int id) throws SQLException {
-        ResultSet rs = getQueryResult(String.format("Select * from livrare where id=%d", id));
+        ResultSet rs = getSingleRowQueryResult(String.format("Select * from livrare where id=%d", id));
+        return deliveryQueryResultToDelivery(id, rs);
+    }
 
+    public static List<Delivery> getAllDeliveries() throws SQLException{
+        List<Delivery> deliveries = new ArrayList<Delivery>();
+
+        ResultSet queryResult = getQueryResult("Select * from livrare");
+        int i=1;
+        while(queryResult.next()){
+            deliveries.add(deliveryQueryResultToDelivery(i++, queryResult));
+        }
+
+        return deliveries;
+    }
+
+    private static Delivery deliveryQueryResultToDelivery(int id, ResultSet queryResult) throws SQLException{
         return new Delivery(id,
-                rs.getInt("IdExpeditor"),
-                rs.getInt("IdDestinatar"),
-                rs.getInt("IdColet"),
-                rs.getInt("IdCurier"),
-                rs.getDate("DataExpediere"),
-                rs.getDate("DataRidicare")
+                queryResult.getInt("IdExpeditor"),
+                queryResult.getInt("IdDestinatar"),
+                queryResult.getInt("IdColet"),
+                queryResult.getInt("IdCurier"),
+                queryResult.getDate("DataExpediere"),
+                queryResult.getDate("DataRidicare")
         );
     }
 }

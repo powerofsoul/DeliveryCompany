@@ -2,8 +2,6 @@ package databaseHandler;
 
 import javafx.scene.image.Image;
 
-import javax.imageio.ImageIO;
-import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -27,7 +25,7 @@ public class User {
 
     public static User getUser(String username) {
         try {
-            ResultSet getUserQuery = DatabaseConnection.getQueryResult(String.format("Select * from users where Username = '%s'", username));
+            ResultSet getUserQuery = DatabaseConnection.getSingleRowQueryResult(String.format("Select * from users where Username = '%s'", username));
             return new User(
                     getUserQuery.getInt("Id"),
                     username,

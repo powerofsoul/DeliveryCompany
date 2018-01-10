@@ -3,7 +3,7 @@ package databaseHandler;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static databaseHandler.DatabaseConnection.getQueryResult;
+import static databaseHandler.DatabaseConnection.getSingleRowQueryResult;
 
 public class Package {
     public int id;
@@ -24,7 +24,7 @@ public class Package {
     }
 
     public static Package getPackage(int id) throws SQLException{
-        ResultSet rs = getQueryResult(String.format("Select * from colet where id=%d", id));
+        ResultSet rs = getSingleRowQueryResult(String.format("Select * from colet where id=%d", id));
 
         return new Package(id,
                 rs.getDouble("Lungime"),
