@@ -16,7 +16,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
 >
     <children>
-        <TableView prefHeight="507.0" prefWidth="894.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TableView fx:id="deliveryTableView" prefHeight="507.0" prefWidth="894.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columns>
                 <TableColumn prefWidth="55.0" text="Id" />
                 <TableColumn prefWidth="174.0" text="Expeditor" />
