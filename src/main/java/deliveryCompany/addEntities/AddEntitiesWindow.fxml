@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="deliveryCompany.addEntities.AddEntitiesController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Pane layoutX="14.0" layoutY="6.0" prefHeight="334.0" prefWidth="384.0"
+              style="-fx-width: 100%; -fx-min-height: 100%;">
+            <children>
+                <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="Sender:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Receiver:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Postman:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="189.0" prefHeight="32.0" prefWidth="128.0" text="PickUpDate:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <ComboBox layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0"/>
+                <ComboBox layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
+                <ComboBox layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
+                <Button layoutX="146.0" layoutY="249.0" mnemonicParsing="false" text="Add">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Button>
+                <DatePicker layoutX="177.0" layoutY="196.0"/>
+                <Label layoutX="93.0" layoutY="22.0" text="Add delivery">
+                    <font>
+                        <Font size="32.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="496.0" layoutY="14.0" prefHeight="271.0" prefWidth="384.0"
+              style="-fx-width: 100%; -fx-min-height: 100%;">
+            <children>
+                <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Adress:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <ComboBox layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0"/>
+                <ComboBox layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
+                <ComboBox layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
+                <Button layoutX="157.0" layoutY="209.0" mnemonicParsing="false" text="Add">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Button>
+                <Label layoutX="93.0" layoutY="22.0" text="Add Sender">
+                    <font>
+                        <Font size="32.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="255.0" layoutY="269.0" prefHeight="224.0" prefWidth="384.0"
+              style="-fx-width: 100%; -fx-min-height: 100%;">
+            <children>
+                <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <ComboBox layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
+                <ComboBox layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
+                <Button layoutX="153.0" layoutY="167.0" mnemonicParsing="false" text="Add">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Button>
+                <Label layoutX="93.0" layoutY="22.0" text="Add Postman">
+                    <font>
+                        <Font size="32.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -46,14 +46,24 @@ public class MainWindowController {
         switch (user.accessLevel) {
             case 5:
                 addManageDeliveryWindow();
+                addAddEntitiesWindow();
         }
     }
 
     private void addManageDeliveryWindow() {
         try {
             URL menuItemUrl = new File("src/main/java/deliveryCompany/manageDelivery/ManageDeliveryWindow.fxml").toURL();
-            FXMLLoader menuItem = createFmxWindow(menuItemUrl, null);
-            MenuItem m = new MenuItem("Manage Delivery", menuItem.load(), mainView);
+            MenuItem m = new MenuItem(menuItemUrl,"Manage Delivery", mainView);
+            menuBox.getChildren().add(m.getMenuButton());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void addAddEntitiesWindow() {
+        try {
+            URL menuItemUrl = new File("src/main/java/deliveryCompany/addEntities/AddEntitiesWindow.fxml").toURL();
+            MenuItem m = new MenuItem(menuItemUrl, "Add Entities", mainView);
             menuBox.getChildren().add(m.getMenuButton());
         } catch (Exception e) {
             System.out.println(e);

@@ -11,13 +11,14 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 import static deliveryCompany.Utils.WindowUtils.createFmxWindow;
 
 public class MenuItem {
     private AnchorPane viewLocation;
-    private AnchorPane menuContent;
     private String name;
+    private URL fxmlURL;
 
     @FXML
     public JFXButton menuButton;
@@ -29,13 +30,14 @@ public class MenuItem {
 
     @FXML
     private void showView() throws IOException{
-        this.viewLocation.getChildren().removeAll();
+        AnchorPane menuContent = createFmxWindow(fxmlURL, null).load();
+        this.viewLocation.getChildren().clear();
         this.viewLocation.getChildren().addAll(menuContent.getChildren());
     }
 
-    public MenuItem(String name, AnchorPane menuContent, AnchorPane viewLocation){
+    public MenuItem(URL fxmlUrl, String name, AnchorPane viewLocation){
         this.name = name;
-        this.menuContent = menuContent;
+        this.fxmlURL = fxmlUrl;
         this.viewLocation = viewLocation;
     }
 
