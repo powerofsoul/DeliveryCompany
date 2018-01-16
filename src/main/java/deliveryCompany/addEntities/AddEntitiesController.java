@@ -26,12 +26,15 @@ public class AddEntitiesController {
     private ComboBox postmanComboBox;
     @FXML
     private DatePicker pickupDatePicker;
+    @FXML
+    private ComboBox packageIdComboBox;
 
     @FXML
     private void initialize() throws SQLException {
         senderComboBox.getItems().addAll(getAll("expeditor"));
         receiverComboBox.getItems().addAll(getAll("destinatar"));
         postmanComboBox.getItems().addAll(getAll("curier"));
+        packageIdComboBox.getItems().addAll(getAllPackageIds());
     }
 
     private List<String> getAll(String who) throws SQLException {
@@ -41,6 +44,17 @@ public class AddEntitiesController {
 
         while (rs.next()) {
             senders.add(rs.getString("Nume") + " " + rs.getString("Prenume"));
+        }
+        return senders;
+    }
+
+    private List<Integer> getAllPackageIds() throws SQLException {
+        ResultSet rs = DatabaseConnection.getQueryResult(String.format("Select * from colet"));
+
+        List<Integer> senders = new ArrayList<Integer>();
+
+        while (rs.next()) {
+            senders.add(rs.getInt("Id"));
         }
         return senders;
     }
@@ -65,11 +79,11 @@ public class AddEntitiesController {
 
         LocalDate localDate = pickupDatePicker.getValue();
 
-        String query = String.format("INSERT INTO livrare (IdExpeditor, IdDestinatar, IdColet, IdCurier, DataExpediere)" +
-                        "Values(%d, %d, %d, '%s')",
+        String query = String.format("INSERT INTO livrare (IdExpeditor, IdDestinatar, IdColet, IdCurier, DataExpediere, DataRidicare)" +
+                        "Values(%d, %d, %d, '%d', '%s', null)",
                 senderId,
                 receiverId,
-                1,
+                Integer.parseInt(packageIdComboBox.getSelectionModel().getSelectedItem().toString()),
                 postmanId,
                 localDate);
         System.out.println(query);

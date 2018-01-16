@@ -48,7 +48,7 @@ public class Delivery {
     private int postmanId;
 
     public String getPostmanName() throws SQLException {
-        return Postman.getPostman(postmanId).toString();
+        return Postman.getPostman(postmanId).firstName + " " + Postman.getPostman(postmanId).lastName;
     }
 
     private Date deliveryDate;

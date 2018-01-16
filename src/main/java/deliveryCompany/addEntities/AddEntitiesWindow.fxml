@@ -30,7 +30,12 @@
                         <Font size="22.0"/>
                     </font>
                 </Label>
-                <Label layoutX="34.0" layoutY="189.0" prefHeight="32.0" prefWidth="128.0" text="PickUpDate:">
+                <Label layoutX="34.0" layoutY="189.0" prefHeight="32.0" prefWidth="128.0" text="PackageID:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="220.0" prefHeight="32.0" prefWidth="128.0" text="PickUpDate:">
                     <font>
                         <Font size="22.0"/>
                     </font>
@@ -38,12 +43,13 @@
                 <ComboBox fx:id="postmanComboBox" layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0"/>
                 <ComboBox fx:id="receiverComboBox" layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
                 <ComboBox fx:id="senderComboBox" layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
-                <Button onAction="#addDelivery" layoutX="146.0" layoutY="249.0" mnemonicParsing="false" text="Add">
+                <ComboBox fx:id="packageIdComboBox" layoutX="177.0" layoutY="190.0" prefHeight="25.0" prefWidth="174.0"/>
+                <Button onAction="#addDelivery" layoutX="146.0" layoutY="255.0" mnemonicParsing="false" text="Add">
                     <font>
                         <Font size="22.0"/>
                     </font>
                 </Button>
-                <DatePicker fx:id="pickupDatePicker" layoutX="177.0" layoutY="196.0"/>
+                <DatePicker fx:id="pickupDatePicker" layoutX="177.0" layoutY="230.0"/>
                 <Label layoutX="93.0" layoutY="22.0" text="Add delivery">
                     <font>
                         <Font size="32.0"/>
