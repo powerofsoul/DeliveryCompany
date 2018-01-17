@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
@@ -27,14 +28,13 @@ public class AddEntitiesController {
     @FXML
     private DatePicker pickupDatePicker;
     @FXML
-    private ComboBox packageIdComboBox;
+    private TextField packageIdTextField;
 
     @FXML
     private void initialize() throws SQLException {
         senderComboBox.getItems().addAll(getAll("expeditor"));
         receiverComboBox.getItems().addAll(getAll("destinatar"));
         postmanComboBox.getItems().addAll(getAll("curier"));
-        packageIdComboBox.getItems().addAll(getAllPackageIds());
     }
 
     private List<String> getAll(String who) throws SQLException {
@@ -83,7 +83,7 @@ public class AddEntitiesController {
                         "Values(%d, %d, %d, '%d', '%s', null)",
                 senderId,
                 receiverId,
-                Integer.parseInt(packageIdComboBox.getSelectionModel().getSelectedItem().toString()),
+                Integer.parseInt(packageIdTextField.textProperty().getValue()),
                 postmanId,
                 localDate);
         System.out.println(query);

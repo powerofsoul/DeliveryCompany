@@ -1,118 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="deliveryCompany.addEntities.AddEntitiesController"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane prefHeight="576.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="deliveryCompany.addEntities.AddEntitiesController">
     <children>
-        <Pane layoutX="14.0" layoutY="6.0" prefHeight="334.0" prefWidth="384.0"
-              style="-fx-width: 100%; -fx-min-height: 100%;">
+        <Pane layoutX="460.0" layoutY="-11.0" prefHeight="334.0" prefWidth="384.0" style="-fx-width: 100%; -fx-min-height: 100%;">
             <children>
                 <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="Sender:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
                 <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Receiver:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
                 <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Postman:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
                 <Label layoutX="34.0" layoutY="189.0" prefHeight="32.0" prefWidth="128.0" text="PackageID:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
                 <Label layoutX="34.0" layoutY="220.0" prefHeight="32.0" prefWidth="128.0" text="PickUpDate:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
-                <ComboBox fx:id="postmanComboBox" layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0"/>
-                <ComboBox fx:id="receiverComboBox" layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
-                <ComboBox fx:id="senderComboBox" layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
-                <ComboBox fx:id="packageIdComboBox" layoutX="177.0" layoutY="190.0" prefHeight="25.0" prefWidth="174.0"/>
-                <Button onAction="#addDelivery" layoutX="146.0" layoutY="255.0" mnemonicParsing="false" text="Add">
+                <ComboBox fx:id="postmanComboBox" layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0" />
+                <ComboBox fx:id="receiverComboBox" layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
+                <ComboBox fx:id="senderComboBox" layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
+                <Button layoutX="146.0" layoutY="272.0" mnemonicParsing="false" onAction="#addDelivery" text="Add">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Button>
-                <DatePicker fx:id="pickupDatePicker" layoutX="177.0" layoutY="230.0"/>
+                <DatePicker fx:id="pickupDatePicker" layoutX="177.0" layoutY="227.0" />
                 <Label layoutX="93.0" layoutY="22.0" text="Add delivery">
                     <font>
-                        <Font size="32.0"/>
+                        <Font size="32.0" />
                     </font>
                 </Label>
+                <TextField fx:id="packageIdTextField" layoutX="177.0" layoutY="193.0" prefHeight="25.0" prefWidth="174.0" />
+                <Button layoutX="358.0" layoutY="193.0" mnemonicParsing="false" text="check id" />
+                <Pane layoutX="14.0" layoutY="320.0" prefHeight="271.0" prefWidth="384.0" style="-fx-width: 100%; -fx-min-height: 100%;">
+                    <children>
+                        <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Adress:">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <TextField layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0" />
+                        <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
+                        <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
+                        <Button layoutX="157.0" layoutY="209.0" mnemonicParsing="false" text="Add">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="93.0" layoutY="22.0" text="Add Sender">
+                            <font>
+                                <Font size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
             </children>
         </Pane>
-        <Pane layoutX="496.0" layoutY="14.0" prefHeight="271.0" prefWidth="384.0"
-              style="-fx-width: 100%; -fx-min-height: 100%;">
+        <Pane layoutX="23.0" layoutY="323.0" prefHeight="245.0" prefWidth="384.0" style="-fx-width: 100%; -fx-min-height: 100%;">
             <children>
                 <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
                 <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
                     <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Label>
-                <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Adress:">
+                <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
+                <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
+                <Button layoutX="157.0" layoutY="197.0" mnemonicParsing="false" text="Add">
                     <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Label>
-                <TextField layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0"/>
-                <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
-                <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
-                <Button layoutX="157.0" layoutY="209.0" mnemonicParsing="false" text="Add">
-                    <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Button>
-                <Label layoutX="93.0" layoutY="22.0" text="Add Sender">
+                <Label layoutX="97.0" layoutY="14.0" text="Add Postman">
                     <font>
-                        <Font size="32.0"/>
+                        <Font size="32.0" />
                     </font>
                 </Label>
             </children>
         </Pane>
-        <Pane layoutX="255.0" layoutY="269.0" prefHeight="224.0" prefWidth="384.0"
-              style="-fx-width: 100%; -fx-min-height: 100%;">
+        <Pane layoutX="23.0" layoutY="7.0" prefHeight="299.0" prefWidth="384.0">
             <children>
-                <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
+                <Button layoutX="147.0" layoutY="237.0" mnemonicParsing="false" onAction="#addDelivery" text="Add">
                     <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Label>
-                <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
-                    <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Label>
-                <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0"/>
-                <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0"/>
-                <Button layoutX="153.0" layoutY="167.0" mnemonicParsing="false" text="Add">
-                    <font>
-                        <Font size="22.0"/>
+                        <Font size="22.0" />
                     </font>
                 </Button>
-                <Label layoutX="93.0" layoutY="22.0" text="Add Postman">
+                <TextField layoutX="108.0" layoutY="76.0" />
+                <TextField layoutX="108.0" layoutY="114.0" />
+                <TextField layoutX="108.0" layoutY="156.0" />
+                <TextField layoutX="108.0" layoutY="199.0" />
+                <Label layoutX="100.0" layoutY="14.0" text="Add package">
                     <font>
-                        <Font size="32.0"/>
+                        <Font size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutY="69.0" prefHeight="32.0" prefWidth="128.0" text="Length:">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Label layoutY="111.0" prefHeight="32.0" prefWidth="128.0" text="Width:">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Label layoutY="153.0" prefHeight="32.0" prefWidth="128.0" text="Height:">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Label layoutY="196.0" prefHeight="32.0" prefWidth="128.0" text="Type:">
+                    <font>
+                        <Font size="22.0" />
                     </font>
                 </Label>
             </children>
