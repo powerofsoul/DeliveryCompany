@@ -41,8 +41,8 @@ public class Delivery {
 
     private int packageId;
 
-    public Package getPackage() throws SQLException {
-        return Package.getPackage(packageId);
+    public int getPackageId() throws SQLException {
+        return Package.getPackage(packageId).id;
     }
 
     private int postmanId;
@@ -85,8 +85,14 @@ public class Delivery {
 
     private void delete(ActionEvent e) throws SQLException {
         DatabaseConnection.executeUpdateQuery(String.format("Delete From livrare where id=%d", id));
-        deliveryList.remove(id);
-        deliveryTableView.getItems().remove(id);
+        int index=0;
+        for(int i=0;i<deliveryList.size();i++){
+            if(deliveryList.get(i).id == id)
+                index = i;
+        }
+
+        deliveryList.remove(index);
+        deliveryTableView.getItems().remove(index);
     }
 
     public Delivery(int id, int senderId, int receiverId, int packageId, int postmanId, Date deliveryDate, Date dispatchedDate) {
