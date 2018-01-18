@@ -23,10 +23,12 @@ public class ManageDeliveryWindowController {
                 generateColumn("Id","id"),
                 generateColumn("Sender","senderName"),
                 generateColumn("Receiver","receiverName"),
+                generateColumn("PackageId","packageId"),
                 generateColumn("Postman","postmanName"),
                 generateColumn("Delivery Date","deliveryDate"),
                 generateColumn("Dispatched Date","dispatchedDate"),
-                generateColumn("Delete Delivery","deleteButton")
+                generateColumn("Delete Delivery","deleteButton"),
+                generateColumn("Update dispached date","updateDateButton")
         );
         deliveryTableView.getItems().clear();
         deliveryTableView.getItems().addAll(Delivery.deliveryList);

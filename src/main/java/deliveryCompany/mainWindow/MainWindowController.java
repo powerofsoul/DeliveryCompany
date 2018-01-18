@@ -47,6 +47,10 @@ public class MainWindowController {
             case 5:
                 addManageDeliveryWindow();
                 addAddEntitiesWindow();
+                break;
+            case 1:
+                addManageDeliveryWindow();
+                break;
         }
     }
 

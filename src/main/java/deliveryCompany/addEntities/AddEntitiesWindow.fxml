@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="deliveryCompany.addEntities.AddEntitiesController">
+<AnchorPane prefHeight="605.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="deliveryCompany.addEntities.AddEntitiesController">
     <children>
         <Pane layoutX="460.0" layoutY="-11.0" prefHeight="334.0" prefWidth="384.0" style="-fx-width: 100%; -fx-min-height: 100%;">
             <children>
@@ -41,7 +41,7 @@
                 <ComboBox fx:id="postmanComboBox" layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0" />
                 <ComboBox fx:id="receiverComboBox" layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
                 <ComboBox fx:id="senderComboBox" layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
-                <Button layoutX="146.0" layoutY="272.0" mnemonicParsing="false" onAction="#addDelivery" text="Add">
+                <Button layoutX="130.0" layoutY="272.0" mnemonicParsing="false" onAction="#addDelivery" text="Add delivery">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -53,35 +53,41 @@
                     </font>
                 </Label>
                 <TextField fx:id="packageIdTextField" layoutX="177.0" layoutY="193.0" prefHeight="25.0" prefWidth="174.0" />
-                <Button layoutX="358.0" layoutY="193.0" mnemonicParsing="false" text="check id" />
+                <Button layoutX="358.0" layoutY="193.0" mnemonicParsing="false" onAction="#checkPackageId" text="check id" />
                 <Pane layoutX="14.0" layoutY="320.0" prefHeight="271.0" prefWidth="384.0" style="-fx-width: 100%; -fx-min-height: 100%;">
                     <children>
-                        <Label layoutX="34.0" layoutY="82.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
+                        <Label layoutX="34.0" layoutY="67.0" prefHeight="32.0" prefWidth="128.0" text="First name:">
                             <font>
                                 <Font size="22.0" />
                             </font>
                         </Label>
-                        <Label layoutX="34.0" layoutY="121.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
+                        <Label layoutX="34.0" layoutY="108.0" prefHeight="32.0" prefWidth="128.0" text="Last Name: ">
                             <font>
                                 <Font size="22.0" />
                             </font>
                         </Label>
-                        <Label layoutX="34.0" layoutY="155.0" prefHeight="32.0" prefWidth="128.0" text="Adress:">
+                        <Label layoutX="34.0" layoutY="142.0" prefHeight="32.0" prefWidth="128.0" text="Adress:">
                             <font>
                                 <Font size="22.0" />
                             </font>
                         </Label>
-                        <TextField layoutX="177.0" layoutY="158.0" prefHeight="25.0" prefWidth="174.0" />
-                        <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
-                        <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
-                        <Button layoutX="157.0" layoutY="209.0" mnemonicParsing="false" text="Add">
+                        <TextField fx:id="addressPeople" layoutX="176.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" />
+                        <TextField fx:id="lastNamePeople" layoutX="176.0" layoutY="108.0" prefHeight="25.0" prefWidth="174.0" />
+                        <TextField fx:id="firstNamePeople" layoutX="177.0" layoutY="70.0" prefHeight="25.0" prefWidth="174.0" />
+                        <Button layoutX="121.0" layoutY="223.0" mnemonicParsing="false" onAction="#addPeople" text="Add sender">
                             <font>
                                 <Font size="22.0" />
                             </font>
                         </Button>
-                        <Label layoutX="93.0" layoutY="22.0" text="Add Sender">
+                        <Label layoutX="43.0" layoutY="14.0" text="Add Sender/Receiver">
                             <font>
                                 <Font size="32.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="tyopeOfPeople" layoutX="176.0" layoutY="184.0" prefHeight="25.0" prefWidth="174.0" promptText="Sender" />
+                        <Label layoutX="34.0" layoutY="181.0" prefHeight="32.0" prefWidth="128.0" text="Type:">
+                            <font>
+                                <Font size="22.0" />
                             </font>
                         </Label>
                     </children>
@@ -100,9 +106,9 @@
                         <Font size="22.0" />
                     </font>
                 </Label>
-                <TextField layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
-                <TextField layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
-                <Button layoutX="157.0" layoutY="197.0" mnemonicParsing="false" text="Add">
+                <TextField fx:id="lastNamePostman" layoutX="177.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
+                <TextField fx:id="firstNamePostman" layoutX="177.0" layoutY="85.0" prefHeight="25.0" prefWidth="174.0" />
+                <Button layoutX="111.0" layoutY="175.0" mnemonicParsing="false" onAction="#addPostman" text="Add postman">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -114,17 +120,17 @@
                 </Label>
             </children>
         </Pane>
-        <Pane layoutX="23.0" layoutY="7.0" prefHeight="299.0" prefWidth="384.0">
+        <Pane layoutX="23.0" layoutY="7.0" prefHeight="334.0" prefWidth="384.0">
             <children>
-                <Button layoutX="147.0" layoutY="237.0" mnemonicParsing="false" onAction="#addDelivery" text="Add">
+                <Button layoutX="99.0" layoutY="276.0" mnemonicParsing="false" onAction="#addPackage" text="Add package">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Button>
-                <TextField layoutX="108.0" layoutY="76.0" />
-                <TextField layoutX="108.0" layoutY="114.0" />
-                <TextField layoutX="108.0" layoutY="156.0" />
-                <TextField layoutX="108.0" layoutY="199.0" />
+                <TextField fx:id="lengthTextField" layoutX="108.0" layoutY="76.0" />
+                <TextField fx:id="widthTextField" layoutX="108.0" layoutY="114.0" />
+                <TextField fx:id="heightTextField" layoutX="108.0" layoutY="156.0" />
+                <TextField fx:id="typeTextField" layoutX="108.0" layoutY="225.0" />
                 <Label layoutX="100.0" layoutY="14.0" text="Add package">
                     <font>
                         <Font size="32.0" />
@@ -145,7 +151,13 @@
                         <Font size="22.0" />
                     </font>
                 </Label>
-                <Label layoutY="196.0" prefHeight="32.0" prefWidth="128.0" text="Type:">
+                <Label layoutY="221.0" prefHeight="32.0" prefWidth="128.0" text="Type:">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="weightTextField" layoutX="108.0" layoutY="192.0" />
+                <Label layoutY="189.0" prefHeight="32.0" prefWidth="128.0" text="Weight:">
                     <font>
                         <Font size="22.0" />
                     </font>
